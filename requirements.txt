@@ -15,4 +15,4 @@ humanize
 requests
 fastapi_utils
 python-barcode
-bs4
+stripe

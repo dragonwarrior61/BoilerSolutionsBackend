@@ -85,7 +85,7 @@ async def create_user(user: UserCreate, db: AsyncSession = Depends(get_db)):
     if existing_user_by_username:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
-            detail="User already registered",
+            detail="User_name already registered",
         )
     
     existing_user_by_email = await get_user_by_email(db, user.email)

@@ -23,7 +23,7 @@ async def get_postal_code(
     db: AsyncSession = Depends(get_db)
 ):
     
-    result = await db.execute(select(Postal_code).where(Postal_code.postal_code.lower() == code.lower()))
+    result = await db.execute(select(Postal_code).where(str(Postal_code.postal_code).lower() == code.lower()))
     db_postal_code = result.scalars().first()
     if db_postal_code is None:
         return "We are sorry currently we don't cover your area"
@@ -31,7 +31,7 @@ async def get_postal_code(
 
 @router.delete("/{postal_codes}", response_model=Postal_codeRead)
 async def delete_postal_code(code: str, db: AsyncSession = Depends(get_db)):
-    result = await db.execute(select(Postal_code).filter(Postal_code.postal_code.lower() == code.lower()))
+    result = await db.execute(select(Postal_code).filter(str(Postal_code.postal_code).lower() == code.lower()))
     postal_code = result.scalars().first()
     if postal_code is None:
         raise HTTPException(status_code=404, detail="postal_codes not found")

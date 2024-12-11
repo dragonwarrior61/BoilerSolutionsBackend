@@ -11,7 +11,7 @@ class Settings(BaseSettings):
     DATABASE_URL: str = f"postgresql+asyncpg://{DB_USERNAME}:{DB_PASSWORD}@{DB_URL}/{DB_NAME}"
     SECRET_KEY: str = os.urandom(32).hex()
     ALGORITHM: str = "HS256"
-    ACCESS_TOKEN_EXPIRE_MINUTES: int = 60
-    REFRESH_TOKEN_EXPIRE_MINUTES: int = 1440
+    ACCESS_TOKEN_EXPIRE_MINUTES: int = 10080
+    REFRESH_TOKEN_EXPIRE_MINUTES: int = 10080
     
 settings = Settings()

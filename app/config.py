@@ -13,5 +13,5 @@ class Settings(BaseSettings):
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 10080
     REFRESH_TOKEN_EXPIRE_MINUTES: int = 10080
-    
+    STRIPE_API_KEY = "sk_test_51Pr59aAy6NGVe8IXwmbkhCn6XmezszKfhFfR6SkaVmyRJYX1iJa7eYivC6x3vUvxFJEkcN0ejXl1nNWldLBsq0Rz00rAZEQdqs"
 settings = Settings()

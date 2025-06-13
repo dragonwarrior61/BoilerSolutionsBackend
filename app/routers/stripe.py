@@ -3,9 +3,10 @@ from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 from fastapi import Request
 import stripe
+from app.config import settings
 
 # Load your Stripe secret key from an environment variable
-stripe.api_key = 'sk_test_51Pr59aAy6NGVe8IXwmbkhCn6XmezszKfhFfR6SkaVmyRJYX1iJa7eYivC6x3vUvxFJEkcN0ejXl1nNWldLBsq0Rz00rAZEQdqs'
+stripe.api_key = settings.STRIPE_API_KEY
 
 # Request model for payment data
 class PaymentRequest(BaseModel):

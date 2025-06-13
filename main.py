@@ -8,7 +8,6 @@ from app.database import Base, engine
 from app.database import get_db
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import Session
-from create_database import *
 from app.utils.postal_code import *
 import ssl
 
